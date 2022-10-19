@@ -1,5 +1,6 @@
 package br.com.oluizleme.forum.controller;
 
+import br.com.oluizleme.forum.controller.dto.DetalhesDoTopicoDTO;
 import br.com.oluizleme.forum.controller.dto.TopicoDTO;
 import br.com.oluizleme.forum.controller.form.TopicoForm;
 import br.com.oluizleme.forum.modelo.Topico;
@@ -43,5 +44,11 @@ public class TopicosController {
 
         URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(uri).body(new TopicoDTO(topico));
+    }
+
+    @GetMapping("/{id}")
+    public DetalhesDoTopicoDTO detalhar(@PathVariable Long id) {
+        Topico topico = topicoRepository.getReferenceById(id);
+        return new DetalhesDoTopicoDTO(topico);
     }
 }
