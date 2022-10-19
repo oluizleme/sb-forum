@@ -5,15 +5,14 @@ import br.com.oluizleme.forum.modelo.Topico;
 import br.com.oluizleme.forum.repository.CursoRepository;
 import lombok.Data;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Data
 public class TopicoForm {
-    @NotNull @NotEmpty @Min(5)
+    @NotNull @NotEmpty
     private String titulo;
-    @NotNull @NotEmpty @Min(10)
+    @NotNull @NotEmpty
     private String mensagem;
     @NotNull @NotEmpty
     private String nomeCurso;
