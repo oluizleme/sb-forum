@@ -1,4 +1,4 @@
-package br.com.oluizleme.forum.config.validacao.security;
+package br.com.oluizleme.forum.config.security;
 
 import br.com.oluizleme.forum.modelo.Usuario;
 import br.com.oluizleme.forum.repository.UsuarioRepository;
